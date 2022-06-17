@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="293016fc-6204-433f-96ab-0114a8637baa" name="Changes" comment="" />
+    <list default="true" id="293016fc-6204-433f-96ab-0114a8637baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/Encryption.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/Identity/BizUserAccount.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/Identity/ConnectedUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/Identity/UserInfos.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/JWTFMAClaims.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/JWTHashAlgorithmValues.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/TokenRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomSecurity/TokenResponse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomUtilis/CommonClasses.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomUtilis/Constants.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domains/FmaDomUtilis/CountryData.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Candidateexperiences.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Career.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CountryCityList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EmploymentTypeList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ExperiencesActivity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Language.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Positions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/Encryption.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/Identity/IIdentityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/Identity/IdentityService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/JWTokenUtility.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/JsonWebToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/JwtAbstractFactory/AbstractFactoryJWT.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FmaServSecurity/JwtAbstractFactory/JWTokenUtilityFactory.inc" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +58,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -165,6 +199,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="28AsfnH01Lc5Fo4Cb8Ng0v5Pdkk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -174,6 +209,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="jbr-11" />
@@ -250,7 +286,7 @@
       <workItem from="1654762646270" duration="1000" />
       <workItem from="1654762721215" duration="4874000" />
       <workItem from="1655321190092" duration="3429000" />
-      <workItem from="1655460236661" duration="286000" />
+      <workItem from="1655460236661" duration="1146000" />
     </task>
     <servers />
   </component>
@@ -259,6 +295,17 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.twig" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
