@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  href="/build/plugins/uicons-regular-straight.css"/>
+    <style>
+
+    body{
+        font-family:Bahnschrift,sans-serif;
+    }
+        .pdfContainer{
+            max-width:21cm !important;
+            box-sizing:content-box !important;
+            //max-height:29cm !important;
+            border:1px solid gray;
+            margin:0 auto !important;
+            padding:1px;
+            border:2px solid gray !important;
+        }
+        .container{
+
+            height:100%;
+            padding-left:22px;
+            box-sizing:border-box !important;
+            border:10px solid #FF7F50 !important;
+        }
+        .presentation_headingV2{
+            display:flex;
+            margin-top:30px;
+            flex-direction:row;
+            padding:15px;
+            justify-content:space-between;
+            align-items:flex-start;
+            padding-top:10px;
+            width:98%;
+        }
+        .presentation_headingV2_left{
+             width:48%;
+             min-height:400px;
+        }
+         .presentation_headingV2_right{
+                     width:48%;
+                     min-height:400px;
+         }
+        .presentation_heading{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            align-items:flex-start;
+            margin-top:20px;
+            width:100%;
+        }
+        .left{
+             display:flex;
+             flex-direction:column;
+             width:75%;
+             float:left;
+             justify-content:flex-start;
+             align-items:flex-start;
+        }
+   .experience{
+                             justify-content:flex-start !important;
+                             align-items:flex-start !important;
+                            }
+        .right{
+           width:25%;
+           float:right;
+        }
+
+         .userImageContainer{
+            height:auto;
+            width:auto;
+        }
+
+        .userImageContainer img{
+            background-color:all !important;
+            border-color:teal;
+            max-height:150px;
+            max-width:150px;
+            border-radius:50%;
+        }
+
+        .userName{
+            font-weight:bold;
+            font-size:22px;
+        }
+
+        .experience{
+            padding-left:30px;
+        }
+
+        .resume{
+            width:80%;
+            text-overflow:wrap;
+            text-align:justify !important;
+            line-height:1.5em !important;
+            letter-spacing:1px;
+        }
+
+        .fonction {
+            color:#FF7F50;
+            font-size:22px;
+            font-weight:bold !important;
+        }
+        .experience{
+         justify-content:flex-start !important;
+         align-items:flex-start !important;
+        }
+
+        .userInfoContainer{
+            position:relative;
+            right:-1px;
+            margin-top:30px;
+            height:auto;
+            width:80%;
+            padding:15px;
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-start;
+            align-items:flex-start;
+            background-color: #FF7F50;
+            float:right;
+            color:white !important;
+        }
+.presentation_headingV2_left{
+    padding-right:20px;
+}
+
+        .presentation_headingV2_left .heading{
+                                        display:flex;
+                                        flex-direction:row;
+                                        justify-content:flex-start;
+                                    }
+
+                                   .presentation_headingV2_right .leftDirection{
+                                        position:absolute !important;
+                                        width:2px !important;
+                                        display:flex;
+
+                                        min-height:1000px;
+                                        background-color: #FF7F50 !important;
+                                    }
+
+                                   .square{
+                                       position:relative;
+                                       right:6px;
+                                       width:12px;
+                                       height:12px;
+                                       display:block;
+
+                                       background-color: #FF7F50 !important;
+                                    }
+
+                                    .grouping{
+                                        min-height:300px;
+
+                                    }
+
+
+        .interligne{
+
+            display:block;
+            margin:4px 0 4px 0;
+        }
+        .aventury_container .content .child .society_and_date:before{
+                                            content:'♠';
+                                            padding-left:5px;
+                                    }
+
+                                    .aventury_container .content .child{
+                                        display:flex;
+                                        padding:5px 0 10px 0;
+                                        flex-direction:column;
+                                        justify-content:center;
+                                        align-items:flex-start;
+                                   }
+
+                                   .aventury_container .content .experience .child  p{
+                                        line-height:0 !important;
+                                   }
+                                   .child ul >li{
+                                        list-style-type:square;
+                                   }
+                                    .child_title{
+
+                                                                line-height:1.2em;
+                                                              }
+
+                                                              .society_and_date{
+                                                                   text-decoration:underline;
+                                                                   font-weight:semi-bold;
+                                                                   white-space:nowrap;
+                                                                   text-overflow:'...';
+                                                                   overflow:hidden;
+                                                                   text-decoration-style:dotted;
+                                                              }
+                                                              .child_title,.child_description li{
+
+                                                                   font-style:normal !important;
+                                                              }
+                                                              .child_description{
+                                                                  padding-top:15px;
+                                                                  display:block;
+                                                                  font-weight:lighter !important;
+                                                                  font-size:16px;
+                                                              }
+
+                                                              .grouping_heading_title{
+                                                                padding-left:25px;
+                                                                font-size:20px;
+                                                              }
+
+                                                              .grouping_heading_title:before{
+                                                                                              content:'♠';
+                                                                                          }
+                                                              .grouping .childrens{
+                                                                  font-family:Verdana,sans-serif;
+                                                                  font-variant:small-caps;
+                                                              }
+
+                                                              .children_osature{
+                                                                                              list-style-type:none !important;
+                                                                                          }
+                                                                                          .children_osature > li {
+                                                                                              font-size:14px;
+                                                                                              padding:0 !important;
+                                                                                              font-style:normal !important;
+                                                                                          }
+    </style>
+</head>
+<body>
+    <div class="pdfContainer">
+        <div class="container">
+            <div class="presentation_heading">
+                <div class="left">
+                    {% set fullnameDefault = candidate.FirstName ~ ' ' ~ candidate.LastName|trans %}
+                    <span class="user" default-value="{{ fullnameDefault }}" id="userName">
+                        {{fullnameDefault}}</span>
+                    <span class="fonction text-color">{{candidate.Position}}</span>
+                    <br/>
+                    <div class="userInfoContainer">
+                        <div class="interligne"><div class="icon"><span class="ti-location-pin"></span></div><div>{{candidate.Address1}}</div> </div>
+                        {%  if candidate.Phone1|length > 0 and candidate.Phone2|length > 0 %}
+                            <div class="interligne"><div class="icon"><span class="ti-microphone"></span></div><div>{{candidate.Phone1}}/{{candidate.Phone2}}</div> </div>
+                        {% elseif candidate.Phone1|length > 0 %}
+                            <div class="interligne"><div class="icon"><span class="ti-microphone"></span></div><div>{{candidate.Phone1}}</div> </div>
+                        {% elseif candidate.Phone2|length > 0 %}
+                            <div class="interligne"><div class="icon"><span class="ti-microphone"></span></div><div>{{candidate.Phone2}}</div> </div>
+                        {%  endif %}
+                        <div class="interligne"><div class="icon"><span class="ti-email"></span></div><div>{{candidate.EmailAddress}}</div> </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="userImageContainer">
+                        <img src="/build/images/IDENTITY2.png" alt="YESSOUFOU MOHAMED" />
+                    </div>
+                </div>
+            </div>
+            <div class="userInfoContainer">
+                <div class="interligne"><span class="fi-rs-location-alt"></span>&nbsp;Akpakpa Tanto Lot 654 MAISON YESSOUFOU SALIOU</div>
+                <div class="interligne"><span class="fi-rs-smartphone"></span>&nbsp;00229 61 64 84 20</div>
+                <div class="interligne"><span class="fi-rs-laptop"></span>&nbsp;myessoufou1995@yahoo.com</div>
+            </div>
+            <div class="presentation_headingV2">
+                <div class=" aventury_container presentation_headingV2_left">
+                     <div class="heading">
+                          <h4 class="title">PARCOURS PROFESSIONNEL</h4>
+                     </div>
+                    <div class="content experience">
+                        {% for experience in ViewDataCandidates['experiences'] %}
+                            <div class="child">
+                               <span class="society_and_date">Janvier 2022 – Aujourd’hui</span>
+                               <br/>
+                               <span class="child_title">
+                                  {{experience.Title|trim}}
+                               </span>
+                               <span class="child_description">
+                                    {% autoescape false %}
+                                      {{experience.Description|trim}}
+                                    {% endautoescape  %}
+                               </span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                  </div>
+                <div class=" aventury_container presentation_headingV2_right">
+                    <div class="leftDirection">
+                    </div>
+                    <div class="grouping items">
+                            <span class="square"></span>
+                            <h4><span class="grouping_heading_title">Compétences</span></h4>
+                             <div class="childrens">
+                                <ul class="children_osature">
+                                    <li class="children_item">
+                                        <span></span><br/>
+                                        <span>Language C#</span><br/>
+                                        <span><progress value="32" max="100"></progress></span>
+                                    </li>
+                                    <li class="children_item">
+                                            <span></span><br/>
+                                            <span>PHP</span><br/>
+                                            <span><progress value="32" max="100"></progress></span>
+                                    </li>
+                                    <li class="children_item">
+                                           <span></span><br/>
+                                           <span>Javascript / TypeScript</span><br/>
+                                           <span><progress value="32" max="100"></progress></span>
+                                    </li>
+                                </ul>
+                             </div>
+                              <div class="childrens">
+                                  <ul class="children_osature">
+                                      <li class="children_item">
+                                          <span></span><br/>
+                                          <span>HTML 5, CSS3, JAVASCRIPT</span><br/>
+                                          <span><progress value="60" max="100"></progress></span>
+                                      </li>
+                                      <li class="children_item">
+                                              <span></span><br/>
+                                              <span>TAILWIND CSS, JQUERY, BOOTSTRAP</span><br/>
+                                              <span><progress value="50" max="100"></progress></span>
+                                      </li>
+                                  </ul>
+                              </div>
+                               <div class="childrens">
+                                    <ul class="children_osature">
+                                        <li class="children_item">
+                                            <span></span><br/>
+                                            <span>MYSQL</span><br/>
+                                            <span><progress value="60" max="100"></progress></span>
+                                        </li>
+                                        <li class="children_item">
+                                                <span></span><br/>
+                                                <span>SQL SERVEUR</span><br/>
+                                                <span><progress value="50" max="100"></progress></span>
+                                        </li>
+                                         <li class="children_item">
+                                              <span></span><br/>
+                                              <span>MongoDB</span><br/>
+                                              <span><progress value="50" max="100"></progress></span>
+                                        </li>
+                                    </ul>
+                               </div>
+                    </div>
+                    <div class="grouping items">
+                         <span class="square"></span>
+                         <h4><span class="grouping_heading_title">Formations</span></h4>
+                                <div class="content experience">
+                                                           <div class="child">
+                                                               <span class="society_and_date">UPI-ONM(Octobre 2017 – Juin 2018)</span>
+                                                               <span class="child_description">
+                                                                   Master 2 en Informatique Appliquée à la gestion des entreprises (MIAGE 2).
+                                                               </span>
+
+                                                           </div>
+                                                            <div class="child">
+                                                                <span class="society_and_date">UPI-ONM(Octobre 2015 – Juin 2016)</span>
+                                                                <span class="child_description">
+                                                                    Licence 3 en Informatique Appliquée à la gestion des entreprises(LIAGE 3).
+                                                                </span>
+
+                                                           </div>
+                                                           <div class="child">
+                                                                 <span class="society_and_date">IS-FOPASE(Octobre 2014 – Juin 2015)</span>
+                                                                 <span class="child_description">
+                                                                     BTS en Informatique appliquée à la gestion des entreprises
+                                                                 </span>
+
+                                                            </div>
+                                                            <div class="child">
+                                                                    <span class="society_and_date">IS-FOPASE(Octobre 2013 – Juin 2014)</span>
+                                                                    <span class="child_description">
+                                                                        Baccalauréat D
+                                                                    </span>
+                                                            </div>
+                                                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section>
+        <div class="Div_65854 Div_65854-no-border-radius" >
+            <div class="Div_65854_full space_div">
+                <div class="headingForm">
+                    <h4 style="text-align:center;font-family: Verdana, sans-serif;color: #002d6b;">Formulaire contact/Demande d'information</h4>
+                </div>
+                <form action="{{ path('loginPOST') }}" class="form_view_cv_auto_generate" id="candidateForm" name="candidateForm">
+                    <div id="form-step-1" class="form-step-1 marginStep candidateInfo">
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">*Entreprise<span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Entreprise" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Civilité<span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="Civilité" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Nom <span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Nom" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Prénom<span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Prénom" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Adresse email <span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Adresse email" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Pays<span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Pays" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Téléphone<span class="ti-alert "></span></label>
+                                <input type="text" name="identify" placeholder="*Téléphone" class="form-control" id="identify"   />
+                            </div>
+                        </div>
+                        <div class="form-linear">
+                            <div class="form-group">
+                                <label class="form-label" for="firstname">Message<span class="ti-alert "></span></label>
+                                <textarea rows="6" cols="8" name="identify" placeholder="Message" class="form-control" id="identify">
+
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class=" applyTemplateChoose" style="text-align: center;margin-top: 20px;">
+                            <button onclick="ValidChooseTemplate(this)" class="btn_generate  ff3d3c-bg">Envoyer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

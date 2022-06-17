@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"  href="/build/plugins/uicons-regular-straight.css"/>
+    <script src="/build/jquery.js"></script>
+    <style>
+
+    body{
+        font-family:Bahnschrift,sans-serif;
+    }
+        .pdfContainer{
+            width:80%;
+            height:80%;
+
+            margin:0 auto !important;
+            padding:1px;
+            border-radius:20px;
+        }
+
+        .templateService{
+            padding:20px;
+            margin:0 auto !important;
+        }
+
+        .items{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            justify-content:flex-start;
+            align-items:center;
+        }
+
+        .items .item_wrapper{
+            width:40% !important;
+            cursor:pointer !important;
+
+        }
+
+        .item_wrapper .item{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            margin:20px;
+        }
+
+        input[type="radio"]{
+            width:20px;
+            height:20px;
+        }
+
+        .space{
+            margin-bottom:20px;
+        }
+
+
+
+
+
+           button,.SubmitBtn{
+                -webkit-appearance: button;
+                padding:10px;
+                margin-top:1em;
+                word-spacing:2px;
+                border-radius:35px;
+                letter-spacing:1px;
+                border:none !important;
+                font-size: 16px;
+                background:teal;
+                font-family: 'Segoe UI', sans-serif;
+                color:white;
+                cursor:pointer;
+                box-shadow:0 2px 1px 0 rgba(0,0,0,0.3) !important;
+            }
+            button:hover{
+               box-shadow:0 8px 8px 0 rgba(0,0,0,0.3) !important;
+               transition:0.4s;
+            }
+            a[class="SubmitBtn"]{
+                text-decoration:none !important;
+
+            }
+            .centerDiv{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+            }
+
+    .oba-box.large {
+        height: 200px;
+
+    }
+
+    .oba-box.largeX {
+        height: 600px;
+    }
+
+
+
+    .oba-box.medium {
+        height: 100px;
+    }
+.oba-box.mediumXL {
+    height: 80px;
+}
+    .oba-box.small {
+        height: 50px;
+    }
+
+.oba-box img {
+    display: block;
+    margin: 0 auto;
+    /*width: auto;
+        height: 100%;*/
+    max-width: 100%;
+    max-height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+                                                              .oba-box {
+                                                                  /*display: flex;
+                                                                  justify-content:center;*/
+                                                                  width: 100%;
+                                                                  border: 0px solid black;
+                                                              }
+
+                                                              .see-xample{
+                                                                position:relative;
+                                                                bottom:0px;
+                                                                display:none;
+                                                                z-index:15000;
+                                                              }
+  </style>
+</head>
+<body>
+    <div class="pdfContainer">
+        {% set lengthTemplate = ViewBagInit['templates']|length %}
+            {% if lengthTemplate != 0 %}
+               <form action={{path('cv_build')}} method="POST">
+                     <div class="centerDiv">
+                           <div class="templateService">
+                             <div class="items">
+                                 {% for template in ViewBagInit['templates'] %}
+                                     <div class="item_wrapper">
+                                        <div class="item">
+                                            <div class="oba-box">
+                                                  <img src="{{template.Posted}}"   alt="{{template.TemplateName}}"/>
+                                            </div>
+                                             <div class="see-xample">
+                                                   <a href="{{template.Posted}}" target="_blank" class="SubmitBtn" alt="{{template.TemplateName}}">
+                                                     Visualiser
+                                                   </a>
+                                             </div>
+                                            {% if loop.index == 1 %}
+                                                <input type="radio" checked="checked" value="{{template.TemplateGuid}}" name="templateID"/>
+                                            {% else %}
+                                                <input type="radio" value="{{template.TemplateGuid}}" name="templateID"/>
+                                            {% endif %}
+                                        </div>
+                                     </div>
+                                 {% endfor %}
+                             </div>
+                           </div>
+                           <div>
+                               <button type="submit" name="SubmitBtn">Générer</button>
+                           </div>
+                     </div>
+               </form>
+            {% else %}
+            {% endif %}
+    </div>
+     <script src="/build/fmaScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: fma_porfoliosV2_Frontend
+    build:
+      context: ./
+      dockerfile: ./docker/apache/Dockerfile
+    volumes:
+      - .:/var/www/html/fma_porfoliosV2_Frontend
+    ports:
+      - "8088:8088"
+    depends_on:
+      - mysqldb
+    restart: always
+    entrypoint: sh /var/www/html/fma_porfoliosV2_Frontend/docker/apache/start_server.sh
+    networks:
+      - symfony
+
+  mysqldb:
+    build:
+      context: ./
+      dockerfile: ./docker/database/Dockerfile
+    container_name: fma_PorfoliosDB
+    environment:
+        MYSQL_ROOT_PASSWORD: Myes1995@@
+        MYSQL_DATABASE: fma_porfoliosV2
+        MYSQL_USER: FMASOFT95
+        MYSQL_PASSWORD: Myes1995@@
+    volumes:
+        - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+        - ./database/data:/var/lib/mysql
+    networks:
+        - symfony
+    ports:
+      - "9906:3306"
+
+  phpmyadmin:
+    depends_on:
+      - mysqldb
+    image: phpmyadmin/phpmyadmin
+    container_name: fma_PorfolioV2_phpmyadmin
+    links:
+      - mysqldb
+    restart: always
+    ports:
+      - "8089:80"
+    volumes:
+      - ./database/phpmyadmin_data:/var/www/html
+    environment:
+        PMA_HOST: mysqldb
+    networks:
+      - symfony
+#  nginx:
+#    image: nginx:1.17.4-alpine
+#    volumes:
+#      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+#      - ./database/phpmyadmin_data:/var/www/html
+#    ports:
+#      - "90:80"
+#    networks:
+#      - symfony
+#    depends_on:
+#      - mysqldb
+#      - phpmyadmin
+
+networks:
+    symfony:

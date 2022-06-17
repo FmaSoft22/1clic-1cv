@@ -1,0 +1,235 @@
+<!Doctype>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="CV" />
+    <meta name="description" content="CV" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/Bookerly');
+        body{
+            font-family:Bookerly,sans-serif;
+        }
+        .pdfContainer{
+            box-sizing:content-box !important;
+            background-color: white; !important;
+        }
+
+        .presentation_heading{
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: auto;
+            width: 100%;
+        }
+        .presentation_body{
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+            align-items:flex-start;
+            font-size: 22px;
+            width:100%;
+        }
+        .left_body{
+            display:flex;
+            flex-direction:column;
+            width:40%;
+            padding: 22px 22px 22px 28px;
+            float:left;
+            box-sizing: border-box;
+            height: 100%;
+            justify-content:flex-start;
+            align-items:flex-start;
+            background-color:#faefef;
+
+        }
+        .right_body{
+            display:flex;
+            flex: 1 0 0px;
+            flex-direction:column;
+            width:65%;
+
+            padding-left: 25px;
+            padding-right: 25px;
+            float:right;
+            justify-content:center !important;
+            align-items:flex-start;
+            background-color: #fff !important;
+        }
+        .left{
+            display:flex;
+            flex-direction:column;
+            padding: 22px 22px 22px 28px;
+            box-sizing: border-box;
+            justify-content:flex-start;
+            align-items:flex-start;
+            width: 35%;
+            background-color: #f2d8d6;
+            word-break: break-word;
+        }
+        .left .user{
+            color:#343b30;
+            font-variant: small-caps;
+        }
+        .left .fonction{
+            color:#a59d9c;
+        }
+
+        .right{
+            display:flex;
+            right: 65%;
+            flex-direction:column;
+            justify-content:center !important;
+            align-items:flex-start;
+            padding: 22px;
+            background-color: #fcf7f7 !important;
+        }
+        .right h4{
+            font-variant: small-caps;
+        }
+        h4{
+            margin-bottom: 10px;
+        }
+        .resume{
+            display: block;
+            font-weight:lighter !important;
+            font-size:13.5px;
+            line-height: 22px;
+        }
+        .icon{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 2px;
+            margin: 5px 5px 5px 0;
+            font-size: 12px;
+            text-align: center !important;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .userInfoContainer{
+            font-size: 14px;
+            font-weight: lighter !important;
+        }
+        .userInfoContainer .interligne{
+            margin: 5px 0 5px 0;
+        }
+        .interligne{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .children_osature{
+            list-style-type: square !important;
+            padding: 0 0 0 10px !important;
+            margin: 0 !important;
+        }
+        .children_osature > li {
+            font-size:13.5px;
+            padding: 5px;
+            font-style:normal !important;
+        }
+        .experience{
+            justify-content:flex-start !important;
+            align-items:flex-start !important;
+        }
+        .aventury_container .content .child .society_and_date:before{
+            content:'♠';
+            padding-left:5px;
+        }
+
+        .aventury_container .content .child{
+            display:flex;
+            padding:5px 0 10px 0;
+            flex-direction:column;
+            justify-content:flex-start;
+            align-items:flex-start;
+        }
+
+        .aventury_container .content .experience .child  p{
+            line-height:0 !important;
+        }
+        ul{
+            padding: 0 !important;
+        }
+        .child ul >li{
+            list-style-type:square;
+        }
+        .child_title{
+            font-weight:bold !important;
+            font-size:16.5px;
+            padding-top: 12px;
+        }
+
+        .society_and_date{
+            text-decoration:underline;
+            margin-top: 12px;
+            overflow:hidden;
+            font-size: 14px;
+            text-decoration-style:dotted;
+        }
+        .child_title,.child_description li{
+
+            font-style:normal !important;
+        }
+        .child_description{
+            padding: 5px;
+            display:block;
+            font-weight:lighter !important;
+            font-size:15.5px;
+
+        }
+        .child_description ul li {
+            padding: 4px;
+
+        }
+        .educDesction{
+            font-size: 16px;
+        }
+        .educTitle{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="pdfContainer">
+        <div class="container">
+            <div class="columns is-gapless presentation_heading">
+                <div class="column is-5">
+                    <div class="left">
+                        {% set fullnameDefault = candidate.FirstName ~ ' ' ~ candidate.LastName|trans %}
+                        <span class="user" default-value="{{ fullnameDefault }}" id="userName">
+                    {{fullnameDefault}}</span>
+                        <span class="fonction text-color">{{candidate.Position}}</span>
+                        <div class="userInfoContainer">
+                            <div class="interligne"><div>{{candidate.Address1}}</div> </div>
+                            {%  if candidate.Phone1|length > 0 and candidate.Phone2|length > 0 %}
+                                <div class="interligne"></div><div>{{candidate.Phone1}}/{{candidate.Phone2}}</div> </div>
+                            {% elseif candidate.Phone1|length > 0 %}
+                                <div class="interligne"><div>{{candidate.Phone1}}</div> </div>
+                            {% elseif candidate.Phone2|length > 0 %}
+                                <div class="interligne"><div>{{candidate.Phone2}}</div> </div>
+                            {%  endif %}
+                            <div class="interligne"><div>{{candidate.EmailAddress}}</div> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="right">
+                        <h4 >PROFIL PROFESSIONNEL</h4>
+                        {% set resume = candidate.Resume %}
+                        <span default-value="{{ resume }}" class="resume" id="resume">
+                        {{candidate.Resume}}</span>
+                    </div>
+            </div>
+            </div>
+        </div>
+
+</body>
+</html>

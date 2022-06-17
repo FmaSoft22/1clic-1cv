@@ -1,0 +1,57 @@
+<!Doctype>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="CV" />
+    <meta name="description" content="CV" />
+    <title></title>class="grouping_heading_title">Compétences</span></h4>
+            {% for skill in candidate.skills %}
+                <div class="childrens">
+                    <span class="educTitle" style="text-decoration: underline;text-decoration-style: dotted;">{{ skill.Title }}</span>
+                    <span class="educDesction">{{ skill.Description|raw }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="grouping  items">
+            <h4><span class="grouping_heading_title">Formations</span></h4>
+            <div class="childrens">
+                <ul class="children_osature">
+                    {% for education in candidate.educations %}
+                        <li class="child">
+                            <span class="society_and_date">{{ education.Institution ~ ' '}}{{ education.StartDate ~ ' - ' ~ education.EndDate }}</span>
+                            <span class="child_description">
+                                                  {{ education.Description|raw }}
+                                           </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right_body">
+        <div class="heading">
+            <h4 class="title">PARCOURS PROFESSIONNEL</h4>
+        </div>
+        <div class="aventury_container content experience">
+            {% for experience in candidate.experiences %}
+                <div class="child">
+                    <span class="society_and_date">{{ experience.CompanyName ~ ' '}}{{ experience.StartDate ~ ' - ' ~ experience.EndDate }}</span>
+                    <br/>
+                    <span class="child_title">
+                              {{experience.Title|trim}}
+                           </span>
+                    <div class="child_description">
+                        {{ experience.Description|raw }}
+                        {#<ul>
+                                        {% for activity in experience.Activity %}
+                                            <li>{{activity.History|trim}}</li>
+                                        {% endfor %}
+                                    </ul>#}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

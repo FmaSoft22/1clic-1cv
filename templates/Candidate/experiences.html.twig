@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% set counter = 1 %}
+
+
+{% block title %}
+  {% if counter > 0 %}
+    {{candidate.FullName}} - Expériences Professionnelles({{counter}})
+  {% else %}
+    {{candidate.FullName}} - Expériences Professionnelles
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+<style>
+    body{
+        margin:20px;
+        font-family:'Segoe UI';
+    }
+</style>
+
+<div class="example-wrapper">
+       {% for ProExperiences in experiences %}
+            {{ProExperiences.Title}}
+       {% endfor %}
+</div>
+{% endblock %}

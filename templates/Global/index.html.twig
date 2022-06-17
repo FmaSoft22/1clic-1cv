@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ parent() }}
+    <section>
+        <div class="Div_65856">
+            <h4 class="intro">CV en ligne design et professionnel</h4>
+            <div class="step">
+                <div class="step_item step_generator">
+                    <div class="step_item_wrapper">
+                        <div class="imgStepContainer">
+                            <img src="/images/group11.png" alt="step_img" />
+                        </div>
+                        <div class="stepDescription">
+                            <div class="title">Choisissez un modèle de CV</div>
+                            <div class="description">Rédiger votre CV </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="step_item step_generator ">
+                    <div class="step_item_wrapper">
+                        <div class="imgStepContainer">
+                            <img src="/images/group6.png" alt="step_img" />
+                        </div>
+                        <div class="stepDescription">
+                            <div class="title">Rédiger Votre CV</div>
+                            <div class="description">Rédiger votre CV </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="step_item step_generator">
+                    <div class="step_item_wrapper">
+                        <div class="imgStepContainer">
+                            <img src="/images/group9.png" alt="step_img" />
+                        </div>
+                        <div class="stepDescription">
+                            <div class="title">Valider CV</div>
+                            <div class="description">Rédiger votre CV </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="step_item step_generator">
+                    <div class="step_item_wrapper">
+                        <div class="imgStepContainer">
+                            <img src="/images/group5.png" alt="step_img" />
+                        </div>
+                        <div class="stepDescription">
+                            <div class="title">Télécharger CV (PDF,WORD)</div>
+                            <div class="description">Rédiger votre CV </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="Div_65856 BG092347">
+            <h4 class="intro">Découvrez nos modèles de CV</h4>
+            <div class="step">
+                {% for template in ViewData['TemplateList'] %}
+                    <div class="step_item oba-box largeX" style="background-color: white !important;">
+                        <div class="oba-box largeX">
+                            <img src="/images/CVExmples/{{ template.Posted }}" alt="CV Banner"/>
+                            <div class="zoom">
+                                <span class="ti-zoom-in zoom-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

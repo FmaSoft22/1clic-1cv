@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section>
+        <div class="Div_65854 Div_65854-no-border-radius" >
+            <div class="Div_65854_full space_div">
+                     <div class="headingForm">
+                        <h4 style="text-align:center;font-family: Verdana, sans-serif;color: #002d6b;">Accédez à mon Compte</h4>
+                     </div>
+                     <form action="{{ path('loginPOST') }}" class="form_view_cv_auto_generate" id="candidateForm" name="candidateForm">
+                             <div id="form-step-1" class="form-step-1 marginStep candidateInfo">
+                                 <div class="form-linear">
+                                     <div class="form-group">
+                                         <label class="form-label" for="firstname">ADRESSE EMAIL <span class="ti-alert "></span></label>
+                                         <input type="text" name="identify" placeholder="EMAIL" class="form-control" id="identify"   />
+                                     </div>
+                                 </div>
+                                 <div class="form-linear">
+                                     <div class="form-group">
+                                         <label class="form-label" for="password">MOT DE PASSE <span class="ti-alert "></span></label>
+                                         <input type="password" name="password" placeholder="MOT DE PASSE" class="form-control" id="password"   />
+                                     </div>
+                                 </div>
+                                 <div class="form-linear">
+                                     <div class="form-group" >
+                                         <label class="form-label">
+                                             <input type="checkbox" name="rememberMe"   id="rememberMe"   />Se souvenir de moi
+                                         </label>
+                                     </div>
+                                 </div>
+                 {#                {% if app.user %}
+                                     <div class="mb-3">
+                                         Vous etes connecté en tant que {{ app.user.username }}
+                                     </div>
+                                 {% endif %}
+                                 {% if app.user == FALSE %}
+                                     <p class="label-danger">
+                                         {% if ViewBagInit['errors'] != '' %}
+                                             {{ViewBagInit['errors']}}
+                                         {% endif %}
+                                     </p>
+                                     <div class="form-group">
+                                         <label class="form-label">Identifiant</label>
+                                         <input type="text" name="email"  class="form-control" value="{{ last_username }}"  required  autocomplete="email" autofocus/>
+                                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <label class="form-label">Mot de Passe</label>
+                                         <input type="password" class="form-control" autocomplete="current-password" name="password" required />
+                                     </div>
+                                     <div>
+                                         <button type="submit" name="SubmitBtn"><span class="fi-rs-sign-in"></span>Connexion</button>
+                                     </div>
+                                 {% else %}
+                                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                     <div>
+                                         <a href="{{ path('app_logout') }}"><button type="default" ><span class="fi-rs-sign-out"></span>Se déconnecter</button></a>
+                                     </div>
+                                 {% endif %}#}
+
+                                 <div class=" applyTemplateChoose" style="text-align: center;margin-top: 20px;">
+                                     <button onclick="ValidChooseTemplate(this)" class="btn_generate  ff3d3c-bg">Se connecter</button>
+                                 </div>
+                             </div>
+                        </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

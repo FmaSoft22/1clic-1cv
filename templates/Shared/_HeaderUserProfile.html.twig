@@ -1,0 +1,51 @@
+
+
+
+
+<section class="sptb">
+    <div class="container">
+        <div class="row">
+            <!-- Header User Profile -->
+            {% include 'Shared/_HeaderUserProfile.html.twig' %}
+            <!-- /Header User Profile -->
+            <div class="col-xl-9 col-lg-12 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="border-0">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="profile">
+                                    <div class="profile-log-switch">
+                                        <div class="media-heading">
+                                            <h2 class="text-center card-title mb-3 font-weight-bold">Infos compte</h2>
+                                        </div>
+                                        <ul class="usertab-list mb-0">
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Nom :&nbsp;</span>@Model.UserInfos.Firstname &nbsp;@Model.UserInfos.Lastname</span></li>
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Localisation :&nbsp;</span>@Model.UserInfos.Town</span></li>
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Langue :&nbsp;</span>@HeaderDataModel.GetLanguageDisplayName(Model.UserInfos.PreferredLanguage)</span></li>
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Email :&nbsp;</span>@Model.UserInfos.EmailAddress1</span></li>
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Pays :&nbsp;</span>@HeaderDataModel.GetCountryDisplayName(Model.UserInfos.CountryCode, 1)</span></li>
+                                           @{
+                                               var format = CommonClasses.GetCountryDatawithoutformatting(Model.UserInfos.Phone1);
+                                               if (format.Length == 3)
+                                               {
+                                                   Model.UserInfos.Phone1 = string.Format("{0} {1}", format[1], format[2]);
+                                               }
+                                            }
+                                            <li><span class="text-dark"><span class="font-weight-semibold">Tél. :&nbsp;</span>@Model.UserInfos.Phone1</span></li>
+                                        </ul>
+                                        <div class="media-heading">
+                                            <h2 class="text-center card-title mb-3 font-weight-bold"></h2>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p>@Model.UserInfos.Note</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

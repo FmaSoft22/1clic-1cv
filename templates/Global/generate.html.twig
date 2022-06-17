@@ -1,0 +1,364 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section>
+        <div class="Div_65854 Div_65854-no-border-radius" >
+            <div class="Div_65854_full space_div">
+                <div class="banner_content_presentation" >
+                    <p class="intro size-mini" style="text-align: center;">Votre choix n'est pas définitif, vous pourrez changer ultérieurement.</p>
+                    <p class="intro_V1" style="text-align: center;">Vous pouvez commencez par indiquer votre prénom et nom pour vous aider à choisir un modèle.</p>
+                </div>
+                <div class="cv_generate" style="display: flex; flex: 1; flex-direction: column;align-items: center;justify-content: center;">
+                    <iframe id="cv_generate" frameborder="0" scrolling="no" onload="resizeIframe(this)" src="/"></iframe>
+                    <div class="wrap" style="text-align: center;display:none;">
+                        <a target="_self" id="PDFLink" href="/" class="button_pdf" >Télécharger PDF</a>
+                    </div>
+                </div>
+                <div id="GlobalStep2" style="display: none !important;">
+                    <div class="tChooseContainer step_item no-margin" style="text-align: center;">
+                        {% for template in ViewData['TemplateList'] %}
+                            {% if loop.index == 1 %}
+                                <div class="oba-box largeM">
+                                    <img id="templateChooseImg" src="/images/CVExmples/{{ template.Posted }}" alt="CV Banner"/>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="form_build" >
+                        <form class="form_view_cv_auto_generate" id="candidateForm" name="candidateForm">
+                            <input type="hidden" id="currentStepForm" value="1" current-step="1" />
+                            <div id="form-step-1" class="form-step-1 marginStep candidateInfo">
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="lastname">CIVILITE<span class="ti-alert "></span></label>
+                                        <select name="civility" class="form-control" id="civility">
+                                            <option value="" selected="selected">Mr</option>
+                                            <option>Mme</option>
+                                            <option>Mrs</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="lastname">NOM <span class="ti-alert "></span></label>
+                                        <input type="text" name="Ffirstname" placeholder="TAGUEMA" class="form-control" id="Ffirstname"   />
+
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="firstname">PRENOM <span class="ti-alert "></span></label>
+                                        <input type="text" name="Flastname" placeholder="JEANNE" class="form-control" id="Flastname"   />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="lastname">AUTRE NOMS <span class="ti-alert "></span></label>
+                                        <input type="text" name="Middlename" placeholder="TAGUEMA" class="form-control" id="Middlename"   />
+
+                                    </div>
+                                </div>
+
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="emailAddress">emailAddress <span class="ti-alert "></span></label>
+                                        <input type="email" name="emailAddress" placeholder="jeane@yahoo.bj" class="form-control" id="emailAddress"   />
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="phoneNumber">TELEPHONE <span class="ti-alert "></span></label>
+                                        <input type="number" name="phoneNumber" placeholder="00 229 00 00 00 00" class="form-control" id="phoneNumber"   />
+
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="location">ADRESSE<span class="ti-alert "></span></label>
+                                        <input type="text" name="location" class="form-control" placeholder="Ex: Cotonou,Lot 000 Maison Jeanne" id="location"  />
+                                    </div>
+                                    <div class="form-group">
+                                    <label class="form-label" for="fonction">FONCTION<span class="ti-alert "></span></label>
+                                        <input type="text" name="fonction" class="form-control" placeholder="Ex: AGENT COMMERCIAL" id="fonction"  />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="location">DATE DE NAISSANCE<span class="ti-alert "></span></label>
+                                        <input type="date" name="dateOfBirth" class="form-control" placeholder="Ex: 01/01/0001" id="dateOfBirth"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="fonction">PAYS<span class="ti-alert "></span></label>
+                                        <input type="text" name="countryID" class="form-control" placeholder="Pays" id="countryID"  />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="location">VILLE<span class="ti-alert "></span></label>
+                                        <input type="text" name="town" class="form-control" placeholder="Ville" id="town"  />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="fonction">NATIONALITE<span class="ti-alert "></span></label>
+                                        <input type="text" name="nationality" class="form-control" placeholder="Nationalité" id="nationality"  />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="resume">RESUME <span class="ti-alert "></span></label>
+                                        <textarea class="form-control textar" rows="10" cols="25" name="resume" id="resume">
+                                        Développeur full Stack avec 3 ans d’expérience. Polyvalent, j’ai une bonne connaissance des différentes étapes techniques.....
+                                    </textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="form-step-2" class="form-step-2 marginStep no-display  experienceInfo">
+                                <table id="experienceInfoTable">
+                                    <thead>
+                                    <tr><td colspan="7">Mes experiences professionnelles</td></tr>
+                                    <tr>
+                                        <td>Titre</td>
+                                        <td>Description</td>
+                                        <td>Compagnie</td>
+                                        <td>Lieu</td>
+                                        <td>Date Début</td>
+                                        <td>Date Fin</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="bodyID">
+                                    </tbody>
+                                    <tfoot></tfoot>
+                                </table>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fonction">TITRE <span class="ti-alert "></span></label>
+                                        <input type="text" name="poste" class="form-control" id="poste"   />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="form-label" for="descriptionExperienceE">DESCRIPTION POSTE/TACHES <span class="ti-alert "></span></label>
+                                        <textarea class="form-control textareaTiny" rows="10" cols="25" name="descriptionExperience" id="descriptionExperience">
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="StartDate">DATE DEBUT <span class="ti-alert "></span></label>
+                                        <input type="date" name="StartDate" class="form-control" id="StartDate"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="EndDate">DATE FIN <span class="ti-alert "></span></label>
+                                        <input type="date" name="EndDate" class="form-control" id="EndDate"   />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="whereYouWork">LIEU DE TRAVAIL <span class="ti-alert "></span></label>
+                                        <input type="text" name="whereYouWork" class="form-control" id="whereYouWork"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="companyName">NOM DE LA COMPAGNIE <span class="ti-alert "></span></label>
+                                        <input type="text" name="companyName" class="form-control" id="companyName"   />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <button type="button" name="AddExperience" onclick="SubmitExperienceForm(this)"  id="AddExperience">Ajouter</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="form-step-3" class="form-step-3 marginStep no-display  skills">
+                                <table id="skillInfoTable">
+                                    <thead>
+                                    <tr><td colspan="7">Mes compétences</td></tr>
+                                    <tr>
+                                        <td>Titre</td>
+                                        <td>Description</td>
+                                        <td>Niveau</td>
+                                        <td>Année expérience</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="skillbody">
+                                    </tbody>
+                                    <tfoot></tfoot>
+                                </table>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fonction">TITRE<span class="ti-alert "></span></label>
+                                        <input type="text" name="skillTitle" class="form-control" id="skillTitle"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="descriptionExperience">DESCRIPTION<span class="ti-alert "></span></label>
+                                        <textarea class="form-control textareaTiny" rows="10" cols="25" name="skillDes" id="skillDes">
+
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="fonction">NIVEAU<span class="ti-alert "></span></label>
+                                        <select name="level" class="form-control" id="level">
+                                            <option value="20" selected="selected">Débubant</option>
+                                            <option value="50">Confirmé</option>
+                                            <option value="90">Expert</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="descriptionExperienceC">ANNEE EXPERIENCE<span class="ti-alert "></span></label>
+                                        <select name="yearExperience" class="form-control" id="yearExperience">
+                                            <option value="1" selected="selected">1 ans</option>
+                                            <option value="2" selected="selected">2 ans</option>
+                                            <option value="3" selected="selected">3 ans</option>
+                                            <option value="4" selected="selected">4 ans</option>
+                                            <option value="5+" selected="selected">5+ ans</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <button type="button" name="AddSkils" onclick="SubmitSkillForm(this)"  id="AddSkils">Ajouter</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="form-step-4" class="form-step-4 marginStep no-display  educations">
+                                <table id="experienceInfoTable">
+                                    <thead>
+                                    <tr><td colspan="7">Mes formations</td></tr>
+                                    <tr>
+                                        <td>Titre</td>
+                                        <td>Description</td>
+                                        <td>INSTITUT/UNIVERSITE</td>
+                                        <td>GRADE OBTENU</td>
+                                        <td>Date Début</td>
+                                        <td>Date Fin</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="bodyIDEdu">
+                                    </tbody>
+                                    <tfoot></tfoot>
+                                </table>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="titleEdu">TITRE DIPLOME<span class="ti-alert "></span></label>
+                                        <input type="text" name="titleEdu" class="form-control" id="titleEdu"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="descriptionEdu">DESCRIPTION DIPLOME<span class="ti-alert "></span></label>
+                                        <textarea class="form-control textareaTiny" rows="10" cols="25" name="descriptionEdu" id="descriptionEdu">
+
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="StartDateEdu">DATE DEBUT<span class="ti-alert "></span></label>
+                                        <input type="date" name="StartDateEdu" class="form-control" id="StartDateEdu"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="EndDateEdu">DATE FIN<span class="ti-alert "></span></label>
+                                        <input type="date" name="EndDateEdu" class="form-control" id="EndDateEdu"   />
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <label class="form-label" for="whereYouEduc">INSTITUT/UNIVERSITE<span class="ti-alert "></span></label>
+                                        <input type="text" name="whereYouEduc" class="form-control" id="whereYouEduc"   />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="degree">GRADE OBTENU<span class="ti-alert "></span></label>
+                                        <select name="degree" class="form-control" id="degree">
+                                            <option selected="selected">CEP</option>
+                                            <option selected="selected">BECP</option>
+                                            <option selected="selected">BAC</option>
+                                            <option selected="selected">BTS</option>
+                                            <option selected="selected">LICENCE</option>
+                                            <option selected="selected">MASTER</option>
+                                            <option selected="selected">DOCTORAT</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-linear">
+                                    <div class="form-group">
+                                        <button type="button" name="AddEduc" onclick="SubmitEducForm(this)"  id="AddEduc">Ajouter</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex;flex-direction: row;justify-content: center;">
+                                <a class="btnFormStep" onclick="ExecutionCandidateForm(this,'prev')" id="prevBtn">Retour</a>
+                                <a class="btnFormStep" onclick="ExecutionCandidateForm(this,'next')" id="nextBtn">Suivant</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="GlobalStep3" style="text-align: center;display: none;">
+                    <progress value="0" id="process_start" max="100" ></progress>
+                    <p style="font-style: italic;letter-spacing: 2px;font-family: Arial">Génération du CV en cours....</p>
+                </div>
+                <div id="GlobalStep1">
+                    <div class="Div_65856 " style="padding: 0 !important;">
+                        <div class="color-container">
+                            {% for template in ViewData['TemplateList'] %}
+                                <div class="step_item no-margin" id="{{ template.Reference }}" onclick="SelectTemplate(this,'{{ template.TemplateGuid }}')" template_id="{{ template.ID }}" template-Guid="{{ template.TemplateGuid }}">
+                                    <div class="oba-box largeM">
+                                        <img src="/images/CVExmples/{{ template.Posted }}" alt="CV Banner"/>
+                                        <div class="zoom">
+                                            <span style="" class="ti-zoom-in zoom-icon"></span>
+                                        </div>
+                                    </div>
+                                    {%  if loop.index == 1 %}
+                                        <div class="isSelectedTemplate"><span class="ti-check"></span></div>
+                                    {% else %}
+                                        <div class="isSelectedTemplate"></div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <div style="display: flex;flex-direction: row;">
+                            <div class="form-linear">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstname">NOM</label>
+                                    <input type="text" name="firstname" placeholder="TAGUEMA" class="form-control" id="firstname"   />
+                                </div>
+                            </div>
+                            <div class="form-linear">
+                                <div class="form-group">
+                                    <label class="form-label" for="lastname">PRENOM</label>
+                                    <input type="text" name="lastname" placeholder="JEANNE" class="form-control" id="lastname"   />
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="division">
+                        <div class="color-container">
+                            {% for color in ViewData['ColorList'] %}
+                                {% if color.Default == TRUE %}
+                                    <div class="color-item color-default" color="{{ color.HexValue }}" onclick="selectedColor(this)" onmouseleave="MouseLeave(this);" onmouseenter="ChangeTemplateColor(this);" style="background-color: {{ color.HexValue }};"></div>
+                                {% else %}
+                                    <div class="color-item" color="{{ color.HexValue }}" onclick="selectedColor(this)" onmouseleave="MouseLeave(this);" onmouseenter="ChangeTemplateColor(this);" style="background-color: {{ color.HexValue }};"></div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <section>
+                        <div class=" applyTemplateChoose" style="text-align: center;">
+                            <a style="display: inline-block;" href="javascript:void(0);"  class="btn_generate">Valider choix</a>
+                        </div>
+
+
+                        <div class="Div_65856 frameDiv" id="frameDiv">
+                            <div class="step">
+                                {% for template in ViewData['TemplateList'] %}
+                                    {% if loop.index == 1 %}
+                                        <div class="step_item" >
+                                            <iframe id="template-frame" frameborder="0" scrolling="no" onload="resizeIframe(this)" src="{{path('get_template', {'tempGuid':template.TemplateGuid})}}"></iframe>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

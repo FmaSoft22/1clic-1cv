@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+   Nouvelle Expérience Profesionnelle
+{% endblock %}
+
+{% block body %}
+<style>
+    body{
+        margin:20px;
+        font-family:'Segoe UI';
+    }
+    .btnSubmit{
+    padding:10px;
+    border-radius:10px;
+    background-color:red;
+    color:white;
+    }
+    .form_input{
+        padding:20px;
+        border-radius:15px;
+        font-family:'Segoe UI';
+        font-size:15px;
+        border-color:gray;
+    }
+    input{
+     margin-bottom:10px;
+    }
+    .vertical_form{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+    }
+    .mp{
+    background-color:red;
+    }
+</style>
+
+<div class="example-wrapper">
+        {{form(ViewBag['ViewForm'])}}
+</div>
+{% endblock %}

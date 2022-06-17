@@ -1,0 +1,39 @@
+ <header class="mon_entete_principal">
+	        <nav class="navigation_barre">
+                <div class="menu_container_left paddingNav">
+                    <a href="{{path('app_global')}}" alt="Accueil">
+                        <span class="logo_morfolio"><span style="color: #002d6b;">1Clic</span>-<span class="paint">1CV</span></span>
+                    </a>
+                </div>
+                <div class="menu_container_center paddingNav" style="float:none;">
+                  <ul class="list_menu">
+                      {% if  ViewData['Action'] == 'index' %}
+                          <li class="menu_item current_action"><a href="/">ACCUEIL</a> </li>
+                      {% else %}
+                          <li class="menu_item "><a href="/">ACCUEIL</a> </li>
+                      {% endif %}
+
+                      {% if  ViewData['Action'] == 'generateCv' %}
+                        <li class="menu_item current_action"><span class="ti-write"></span><a href="{{ path('generate_cv') }}">CREER VOTRE CV</a> </li>
+                      {% else %}
+                        <li class="menu_item "><span class="ti-crown"></span><a href="{{ path('generate_cv') }}">CREER VOTRE CV</a> </li>
+                      {% endif %}
+                       <li class="menu_item" href=""><a>CV</a></li>
+                       <li class="menu_item"><a href="{{ path('blog_index')}}">Blog</a></li>
+                       <li class="menu_item" href=""><span class="ti-headphone"></span><a>CONSEILS</a></li>
+                      {% if  ViewData['Action'] == 'login' %}
+                          <li class="menu_item current_action" ><span class="ti-user"></span><a href="{{ path('app_login')}}">IDENTIFIEZ-VOUS</a></li>
+                      {% else %}
+                          <li class="menu_item" ><span class="ti-user"></span><a href="{{ path('app_login')}}">IDENTIFIEZ-VOUS</a></li>
+                      {% endif %}
+
+                    </ul>
+                </div>
+                 <div class="menu_container_right paddingNav">
+                       <ul class="list_menu">
+                           <li class="menu_item"><span style="display: inline-block;"><img width="15" height="15" src="/flags/bj.svg" alt="Bénin"></span>&nbsp;<a href="#">BENIN</a></span></li>
+                           <li class="menu_item"><span class="ti-email"></span><a href="{{path('web_contact')}}">NOUS CONTACTER</a></li>
+                       </ul>
+                 </div>
+	        </nav>
+</header>

@@ -1,0 +1,345 @@
+<!Doctype>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="CV" />
+    <meta name="description" content="CV" />
+    <title></title>
+    <link rel="stylesheet" href="/plugins/css/themify-icons.css" />
+    <style>
+        body{
+            font-family:Bahnschrift,sans-serif;
+        }
+        .pdfContainer{
+            max-width:21cm !important;
+            box-sizing:content-box !important;
+            max-height: 27cm;
+            height: auto;
+            background-color: white; !important;
+            width: 21cm;
+            margin:0 auto !important;
+            padding:1px;
+        }
+        .container{
+            height:100%;
+            box-sizing:border-box !important;
+            background-color: #fff;
+            border:2px solid  #f6f5f0 !important;
+        }
+        .presentation_heading{
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+            align-items:flex-start;
+            font-size: 22px;
+            background-color: #39c3b0;
+            width:100%;
+            color:white;
+            height: 170px;
+        }
+        .presentation_body{
+            display:flex;
+            flex-direction:row;
+            justify-content:flex-start;
+            align-items:flex-start;
+            font-size: 22px;
+            border-top: 5px solid #39c3b0;
+            margin-top: 5px;
+            background-color:#e3f6f4;
+            width:100%;
+        }
+        .left_body{
+            display:flex;
+            flex-direction:column;
+            width:35%;
+            padding: 22px 22px 22px 28px;
+            float:left;
+            box-sizing: border-box;
+            height: 100%;
+            justify-content:flex-start;
+            align-items:flex-start;
+
+
+        }
+        .right_body{
+            display:flex;
+            flex-direction:column;
+            width:65%;
+            margin-top: 12px;
+            height: 100%;
+            padding-left: 25px;
+            padding-right: 25px;
+            float:right;
+            justify-content:center !important;
+            align-items:flex-start;
+            background-color: #fff !important;
+        }
+        .left{
+            display:flex;
+            flex-direction:column;
+            width:50%;
+            padding: 22px 22px 22px 28px;
+            box-sizing: border-box;
+            height: 100%;
+            justify-content:flex-start;
+            align-items:flex-start;
+            background-color: #39c3b0;
+        }
+        .left .user{
+            color:#fff;
+            font-variant: small-caps;
+        }
+        .left .fonction{
+            color:#a59d9c;
+        }
+
+        .right{
+            display:flex;
+            flex-direction:column;
+            width:60%;
+            height: 100%;
+            padding-left: 25px;
+            padding-right: 25px;
+            float:right;
+            justify-content:center !important;
+            align-items:flex-start;
+        }
+        .right h4{
+            font-variant: small-caps;
+        }
+        h4{
+            margin-bottom: 10px;
+        }
+        .resume{
+            display: block;
+            font-weight:lighter !important;
+            font-size:13.5px;
+            line-height: 22px;
+        }
+        .icon{
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            padding: 2px;
+            margin: 5px 5px 5px 0;
+            font-size: 12px;
+            text-align: center !important;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .userInfoContainer{
+            font-size: 14px;
+            font-weight: lighter !important;
+        }
+        .userInfoContainer .interligne{
+            margin: 5px 0 5px 0;
+        }
+        .interligne{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .children_osature{
+            list-style-type: square !important;
+            padding: 0 0 0 10px !important;
+            margin: 0 !important;
+        }
+        .children_osature > li {
+            font-size:13.5px;
+            padding: 5px;
+            font-style:normal !important;
+        }
+        .experience{
+            justify-content:flex-start !important;
+            align-items:flex-start !important;
+        }
+        .aventury_container .content .child .society_and_date:before{
+            content:'♠';
+            padding-left:5px;
+        }
+
+        .aventury_container .content .child{
+            display:flex;
+            padding:5px 0 10px 0;
+            flex-direction:column;
+            justify-content:flex-start;
+            align-items:flex-start;
+        }
+
+        .aventury_container .content .experience .child  p{
+            line-height:0 !important;
+        }
+        ul{
+            padding: 0 !important;
+        }
+        .child ul >li{
+            list-style-type:square;
+        }
+        .child_title{
+            font-weight:bold !important;
+            font-size:13.5px;
+        }
+
+        .society_and_date{
+            text-decoration:underline;
+
+            overflow:hidden;
+            font-size: 14px;
+            text-decoration-style:dotted;
+        }
+        .child_title,.child_description li{
+
+            font-style:normal !important;
+        }
+        .child_description{
+            padding: 5px;
+            display:block;
+            font-weight:lighter !important;
+            font-size:13.5px;
+        }
+        .child_description ul li {
+            padding: 4px;
+
+        }
+        .userImageContainer{
+            height:auto;
+            width:auto;
+            position: absolute;
+            z-index: 2000;
+            top: 4em;
+            margin-left: 2.5em;
+
+        }
+
+        .userImageContainer img{
+            border-color:#e9a506;
+            max-height:150px;
+            max-width:150px;
+        }
+    </style>
+</head>
+<body>
+<div class="pdfContainer">
+    <div class="container">
+        <div class="userImageContainer">
+            <img src="/images/candidateImages/PIC.png" alt="Candidate Image" />
+        </div>
+        <div class="presentation_heading">
+            <div class="left">
+
+            </div>
+            <div class="right">
+                {% set fullname = candidate.FirstName ~ ' ' ~ candidate.LastName|trans %}
+                <span class="user" default-value="{{ fullname }}" id="userName">
+                   {{ fullname }}
+                </span>
+                <span class="fonction text-color">{{candidate.Position}}</span>
+            </div>
+        </div>
+        <div class="presentation_body">
+            <div class="left_body">
+                <div class="grouping  items">
+                    <h4>Compétences</h4>
+                    <ul class="children_osature">
+                        <li class="children_item">
+                            <span>Language C#</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>PHP</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>Javascript / TypeScript</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>MYSQL</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>SQL SERVEUR</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>MongoDB</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>HTML 5, CSS3, JAVASCRIPT</span><br/>
+                        </li>
+                        <li class="children_item">
+                            <span>TAILWIND CSS, JQUERY, BOOTSTRAP</span><br/>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grouping  items">
+                    <h4><span class="grouping_heading_title">Formations</span></h4>
+                    <div class="childrens">
+                        <ul class="children_osature">
+                            <li class="child">
+                                <span class="society_and_date">UPI-ONM(Octobre 2017 – Juin 2018)</span>
+                                <span class="child_description">
+                                               Master 2 en Informatique Appliquée à la gestion des entreprises (MIAGE 2).
+                                           </span>
+
+                            </li>
+                            <li class="child">
+                                <span class="society_and_date">UPI-ONM(Octobre 2015 – Juin 2016)</span>
+                                <span class="child_description">
+                                                Licence 3 en Informatique Appliquée à la gestion des entreprises(LIAGE 3).
+                                            </span>
+
+                            </li>
+                            <li class="child">
+                                <span class="society_and_date">IS-FOPASE(Octobre 2014 – Juin 2015)</span>
+                                <span class="child_description">
+                                                 BTS en Informatique appliquée à la gestion des entreprises
+                                             </span>
+
+                            </li>
+                            <li class="child">
+                                <span class="society_and_date">IS-FOPASE(Octobre 2013 – Juin 2014)</span>
+                                <span class="child_description">
+                                                    Baccalauréat D
+                                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_body">
+                <div class="heading">
+                    <h4 >PROFIL PROFESSIONNEL</h4>
+                    {% set resume = candidate.Resume %}
+                    <span default-value="{{ resume }}" class="resume" id="resume">
+                      {{candidate.Resume}}
+                    </span>
+                </div>
+                <div class="heading">
+                    <h4 class="title">PARCOURS PROFESSIONNEL</h4>
+                </div>
+                <div class="aventury_container content experience">
+                    {% for experience in candidate.experiences %}
+                        <div class="child">
+                            <span class="society_and_date">{{ experience.StartDate|raw  ~ ' - ' ~ experience.EndDate|raw  }}</span>
+                            <br/>
+                            <span class="child_title">
+                                  {{experience.Title|trim}}
+                               </span>
+                            <div class="child_description">
+                                <ul>
+                                    {% for activity in experience.Activity %}
+                                        <li>{{activity.History|trim}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
